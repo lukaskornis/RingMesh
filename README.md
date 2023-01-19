@@ -18,10 +18,6 @@ This Unity3D script generates an optimised ring mesh with a given radius and thi
 -   Adjust the radius, thickness, segments, angle range, and useXZPlane parameters to generate the desired ring mesh
 -   The OnValidate() function will automatically update the mesh when these parameters are changed
 
-### Minium requirement
-
--   Unity version 5.6.0 or higher
--   RequireComponent(typeof(MeshFilter), typeof(MeshRenderer)) is needed
 
 ### Installation
 
@@ -47,11 +43,11 @@ Here is an example of how to use this script, you can find the example scene in 
 
 
 ### Limitations and Todo's
-The algorithm is slow if it changes topology at runtime. Optimisations must be done.
+Current implementation is slow when changing topology at runtime. Optimisations must be done.
 Due to shared vertices UV mapping wraps wrong with naive algorithm. Either each quad must use different vertices or mirror UV wrapping should be applied.
 
-###Licensing
+### Licensing
 This code is released under the MIT license.
 
-###Authors
+### Authors
 The original author of this script is Viktor Kornilov, but you are welcome to submit pull requests and contribute to this project.
