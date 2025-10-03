@@ -1,22 +1,9 @@
 ## OptiRingMesh
+A Unity3D Utility Component to dynamically generate ring meshes with various parameters. Can be used for UI's and Visual Effects. Improves iteration speed and workflow compared to manual 3D remodeling.
 
-This Unity3D script generates an optimised ring mesh with a given radius and thickness, with a given number of segments and angle range.
+<img width="357" height="190" alt="rings" src="https://github.com/user-attachments/assets/a97d7d09-1b8a-4098-8432-ad4c6ffa1e1b" />
+<img width="371" height="190" alt="paveikslas" src="https://github.com/user-attachments/assets/be7afc18-3ab6-47f9-8f63-c569ff0f144c" />
 
-### Features:
-
--   Generates a ring mesh on either the xz plane or the xy plane
--   Uses a single Mesh Filter and Mesh Renderer
--   Provides methods to update the mesh without allocating memory
--   Resizes the mesh if the radius or thickness changes
--   Hides obsolete mesh if the angle range changes
--   experimental uv circular mapping support
--   works great in edit mode without warnings
-
-### Usage:
-
--   Attach this script to a GameObject in your scene
--   Adjust the radius, thickness, segments, angle range, and useXZPlane parameters to generate the desired ring mesh
--   The OnValidate() function will automatically update the mesh when these parameters are changed
 
 
 ### Installation
@@ -27,10 +14,16 @@ This Unity3D script generates an optimised ring mesh with a given radius and thi
 
 Please make sure that the script component is added to a GameObject that has both MeshFilter and MeshRenderer component, otherwise it will fail to generate the mesh.
 
-### Example
 
-Here is an example of how to use this script, you can find the example scene in the package or in the repository as well
+### Usage:
 
+-   Attach this script to a GameObject in your scene
+-   Adjust the parameters to generate the desired ring mesh
+-   3D mesh updates on the fly
+
+### Usage example 
+
+```cs
   OptiRingMesh ring = gameObject.AddComponent<OptiRingMesh>();
   
   ring.radius = 10;
@@ -40,7 +33,18 @@ Here is an example of how to use this script, you can find the example scene in 
   ring.useXZPlane = false;
   
   ring.GenerateMesh()
+```
+you can find the example scene in the package or in the repository as well
 
+
+### Features:
+
+-   Generates a ring mesh on either the xz plane or the xy plane
+-   Uses a single Mesh Filter and Mesh Renderer Component
+-   Provides methods to update the mesh without allocating memory
+-   Resizes the mesh if the radius or thickness changes
+-   Hides obsolete mesh if the angle range changes
+-   experimental uv circular mapping support
 
 ### Limitations and Todo's
 Current implementation is slow when changing topology at runtime. Optimisations must be done.
@@ -50,4 +54,4 @@ Due to shared vertices UV mapping wraps wrong with naive algorithm. Either each 
 This code is released under the MIT license.
 
 ### Authors
-The original author of this script is Viktor Kornilov, but you are welcome to submit pull requests and contribute to this project.
+The original author of this script is Lukas Kornilovas, but you are welcome to submit pull requests and contribute to this project.
